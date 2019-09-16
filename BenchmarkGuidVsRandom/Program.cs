@@ -13,16 +13,17 @@ namespace BenchmarkGuidVsRandom
 
             for (var lap = 0; lap < laps; lap++)
             {
+                sw.Restart();
                 for (var i = 0; i < runs; i++)
                 {
                     Guid.NewGuid();
                 }
                 Console.WriteLine($"Guid.NewGuid took {sw.ElapsedMilliseconds} ms");
-                sw.Restart();
             }
 
             for (var lap = 0; lap < laps; lap++)
             {
+                sw.Restart();
                 for (var i = 0; i < runs; i++)
                 {
                     new Random().Next(0, 99).ToString("D2");
